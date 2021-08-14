@@ -18,24 +18,24 @@ public class ChangePlatform : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D Collision)
+    void OnTriggerEnter2D(Collider2D Collided_Gameobject)
     {
-        if(Collision.CompareTag("White"))
+        if(Collided_Gameobject.CompareTag("White"))
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255,255,255);
             CurrentColour = CS.Colour[CS.ColourCounter];
         }
-        if(Collision.CompareTag("Red"))
+        if(Collided_Gameobject.CompareTag("Red"))
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255,0,0);
             CurrentColour = CS.Colour[CS.ColourCounter];
         }
-        if(Collision.CompareTag("Green"))
+        if(Collided_Gameobject.CompareTag("Green"))
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(0,255,0);
             CurrentColour = CS.Colour[CS.ColourCounter];
         }
-        if(Collision.CompareTag("Blue"))
+        if(Collided_Gameobject.CompareTag("Blue"))
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,255);
             CurrentColour = CS.Colour[CS.ColourCounter];
