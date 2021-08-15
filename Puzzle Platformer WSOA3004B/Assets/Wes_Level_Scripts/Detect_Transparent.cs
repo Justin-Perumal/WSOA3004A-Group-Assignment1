@@ -15,7 +15,6 @@ public class Detect_Transparent : MonoBehaviour
         {
             Collided_Gameobject.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(Turnon_Collider());
-            Collided_Gameobject.transform.position = gameObject.transform.position;
             Collided_Gameobject.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
         IEnumerator Turnon_Collider()
