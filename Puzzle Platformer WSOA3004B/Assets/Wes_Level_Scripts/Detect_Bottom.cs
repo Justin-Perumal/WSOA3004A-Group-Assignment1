@@ -8,7 +8,9 @@ public class Detect_Bottom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D Collided_Gameobject)
     {
-        if (Collided_Gameobject.name == "Blue_object(Clone)")
+        string Object_name = Detect_Object.name + "(Clone)";
+
+        if (Collided_Gameobject.name == Object_name)
         {
             Collided_Gameobject.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             Collided_Gameobject.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
