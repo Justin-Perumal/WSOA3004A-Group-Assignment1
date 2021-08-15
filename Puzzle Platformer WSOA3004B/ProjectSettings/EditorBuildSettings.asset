@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Justin_Level.unity
+    guid: 255b49ed9c77e644d9afad7728f44cb9
+  - enabled: 1
+    path: Assets/Scenes/Siya_Level.unity
+    guid: da599661bc065b247b2164b5558b195f
+  - enabled: 1
+    path: Assets/Scenes/Wes_Level.unity
+    guid: 9e7915857766e4f4cac98dc9b480ec1e
   m_configObjects: {}
