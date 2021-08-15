@@ -9,6 +9,7 @@ TagManager:
   - Green
   - Blue
   - Platform
+  - Falling_Object
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,10 @@ public class Detect_Bottom : MonoBehaviour
             Collided_Gameobject.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
+        else
+        {
+            Destroy(Collided_Gameobject.gameObject);
+        }
 
     }
 }

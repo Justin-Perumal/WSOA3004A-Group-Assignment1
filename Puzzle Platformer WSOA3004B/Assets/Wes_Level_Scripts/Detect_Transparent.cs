@@ -7,9 +7,11 @@ public class Detect_Transparent : MonoBehaviour
     public float seconds;
     public GameObject Detect_Object;
     
+    
     private void OnTriggerEnter2D(Collider2D Collided_Gameobject)
     {
-        if (Collided_Gameobject.name== "Blue_object(Clone)")
+        string Object_name = Detect_Object.name + "(Clone)";
+        if (Collided_Gameobject.name== Object_name)
         {
             Collided_Gameobject.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(Turnon_Collider());
