@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7849930158570574042}
   m_Layer: 0
   m_Name: MoveablePlatform
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   Waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  platformSpeed: 2
+  platformSpeed: 4
 --- !u!61 &7849930158570574042
 BoxCollider2D:
   m_ObjectHideFlags: 0
