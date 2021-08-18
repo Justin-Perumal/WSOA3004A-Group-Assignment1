@@ -9,10 +9,18 @@ public class MovingPlatform : MonoBehaviour
 
     [SerializeField] private float platformSpeed;
 
+    //Justin additions for coloured platforms --> Variables for colour and the script to check colour
+    public ColourSwitch CS;
+    [SerializeField] private string CurrentColour; 
+    private Color White = new Color(1f,1f,1f,1f);
+    private Color Red = new Color(1f,0,0,1f);
+    private Color Green = new Color(0,1f,0,1f);
+    private Color Blue = new Color(0,0,1f,1f);
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        CS = GameObject.Find("Player").GetComponent<ColourSwitch>();
     }
 
     // Update is called once per frame
@@ -26,14 +34,37 @@ public class MovingPlatform : MonoBehaviour
             {
                 currentIndex = 0;
             }
-        }      
+        }   
+
+        CurrentColour = CS.ColourString;   
     }
 
+// Just made a few additions to make it work with colour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        //Check the platforms colour and make sure it matches the players colour
+        if(gameObject.GetComponent<SpriteRenderer>().color == White && CurrentColour == "White")
+        {
+            Debug.Log("white platform be moving");
+        }
+
+        if(gameObject.GetComponent<SpriteRenderer>().color == Red && CurrentColour == "Red")
+        {
+            Debug.Log("red platform be moving");
+        }
+
+        if(gameObject.GetComponent<SpriteRenderer>().color == Green && CurrentColour == "Green")
+        {
+            Debug.Log("green platform be moving");
+        }
+
+        if(gameObject.GetComponent<SpriteRenderer>().color == Blue && CurrentColour == "Blue")
+        {
+            Debug.Log("blue platform be moving");
+        }
         //Move platform towards target waypoint
-        if (collision.gameObject.CompareTag("Player") && Vector2.Distance(Waypoints[currentIndex].transform.position, transform.position) < 0.1f)
+        if (collision.gameObject.name == "Player" && Vector2.Distance(Waypoints[currentIndex].transform.position, transform.position) < 0.1f)
         {
             currentIndex++;
             if (currentIndex >= Waypoints.Length)
