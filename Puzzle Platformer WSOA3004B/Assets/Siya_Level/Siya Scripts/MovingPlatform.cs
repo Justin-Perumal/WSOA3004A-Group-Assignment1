@@ -41,7 +41,7 @@ public class MovingPlatform : MonoBehaviour
 
 // Just made a few additions to make it work with colour
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         //Check the platforms colour and make sure it matches the players colour
         if(gameObject.tag == "WhiteMove" && CurrentColour == "White")
@@ -80,7 +80,7 @@ public class MovingPlatform : MonoBehaviour
 //        transform.position = Vector2.MoveTowards(transform.position, Waypoints[currentIndex].transform.position, platformSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         collision.gameObject.transform.parent = null;
     }

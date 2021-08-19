@@ -7,7 +7,7 @@ public class Camera_Follow : MonoBehaviour
     public Transform target;
     public Vector3 target_Offset;
     
-    void Update()
+    void FixedUpdate()
     {
         if (target)
         {

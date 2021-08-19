@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 4126108320158695979}
   - component: {fileID: 4126108320158695956}
   - component: {fileID: 4126108320158695977}
+  - component: {fileID: 1849103945895777170}
   - component: {fileID: 4126108320158695976}
   m_Layer: 0
   m_Name: Player
@@ -162,6 +163,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1849103945895777170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4126108320158695957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e0bb0093325664287c32a96c3cac06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 4126108320158695957}
+  Colour:
+  - White
+  - Red
+  - Green
+  - Blue
+  ColourString: 
+  ColourCounter: 0
 --- !u!114 &4126108320158695976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +199,7 @@ MonoBehaviour:
   JumpForce: 8
   PlayerBody: {fileID: 0}
   GroundCheck: {fileID: 6222290903643645510}
-  CheckSize: 0.5
+  CheckSize: 0.4
   Ground:
     serializedVersion: 2
     m_Bits: 256

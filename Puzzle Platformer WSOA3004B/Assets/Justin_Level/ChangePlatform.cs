@@ -25,25 +25,25 @@ public class ChangePlatform : MonoBehaviour
         if((Collided_Gameobject.CompareTag("White") && CurrentColour == "White"))
         {
             Debug.Log("White col disabled");
-            //PlatformCollider.enabled = false;
+            PlatformCollider.enabled = false;
         }
 
-        if((Collided_Gameobject.CompareTag("Red") || Collided_Gameobject.tag != "Red_Object") && CurrentColour == "Red")
+        if((Collided_Gameobject.CompareTag("Red")) && CurrentColour == "Red")
         {
             Debug.Log("Red col disabled");
-            //PlatformCollider.enabled = false;
+            PlatformCollider.enabled = false;
         }
 
         if(Collided_Gameobject.CompareTag("Blue") && CurrentColour == "Blue")
         {
             Debug.Log("Blue col disabled");
-            //PlatformCollider.enabled = false;
+            PlatformCollider.enabled = false;
         }
 
         if(Collided_Gameobject.CompareTag("Green") && CurrentColour == "Green")
         {
             Debug.Log("Green col disabled");
-            //PlatformCollider.enabled = false;
+            PlatformCollider.enabled = false;
         }
     }
 
