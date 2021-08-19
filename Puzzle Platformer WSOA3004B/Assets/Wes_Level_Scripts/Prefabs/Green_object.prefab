@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6662356155335357996}
   - component: {fileID: 6662356155335357995}
   - component: {fileID: 6662356155335357994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Green_object
-  m_TagString: Falling_Object
+  m_TagString: Green_Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

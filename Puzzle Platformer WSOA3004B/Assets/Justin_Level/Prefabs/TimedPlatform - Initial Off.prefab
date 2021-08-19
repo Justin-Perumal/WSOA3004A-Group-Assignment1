@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4004680421298807404}
   - component: {fileID: 4004680421298807407}
   - component: {fileID: 4004680421298807406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TimedPlatform - Initial Off
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}

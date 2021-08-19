@@ -22,24 +22,28 @@ public class ChangePlatform : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D Collided_Gameobject)
     {
-        if(Collided_Gameobject.CompareTag("White") && CurrentColour == "White")
+        if((Collided_Gameobject.CompareTag("White") && CurrentColour == "White"))
         {
-            PlatformCollider.enabled = false;
+            Debug.Log("White col disabled");
+            //PlatformCollider.enabled = false;
         }
 
-        if(Collided_Gameobject.CompareTag("Red") && CurrentColour == "Red")
+        if((Collided_Gameobject.CompareTag("Red") || Collided_Gameobject.tag != "Red_Object") && CurrentColour == "Red")
         {
-            PlatformCollider.enabled = false;
+            Debug.Log("Red col disabled");
+            //PlatformCollider.enabled = false;
         }
 
         if(Collided_Gameobject.CompareTag("Blue") && CurrentColour == "Blue")
         {
-            PlatformCollider.enabled = false;
+            Debug.Log("Blue col disabled");
+            //PlatformCollider.enabled = false;
         }
 
         if(Collided_Gameobject.CompareTag("Green") && CurrentColour == "Green")
         {
-            PlatformCollider.enabled = false;
+            Debug.Log("Green col disabled");
+            //PlatformCollider.enabled = false;
         }
     }
 
@@ -57,12 +61,12 @@ public class ChangePlatform : MonoBehaviour
         }
         if(Col.gameObject.tag == "Green")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(0,255,0);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color32(96,200,111,255);
             CurrentColour = CS.Colour[CS.ColourCounter];
         }
         if(Col.gameObject.tag == "Blue")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,255);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color32(49,147,184,255);
             CurrentColour = CS.Colour[CS.ColourCounter];
         }
     }

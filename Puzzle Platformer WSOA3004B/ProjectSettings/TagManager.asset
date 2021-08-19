@@ -10,6 +10,16 @@ TagManager:
   - Blue
   - Platform
   - Falling_Object
+  - Red_Object
+  - Green_Object
+  - Blue_Object
+  - Red_Detector
+  - Green_Detector
+  - Blue_Detector
+  - WhiteMove
+  - RedMove
+  - GreenMove
+  - BlueMove
   layers:
   - Default
   - TransparentFX
@@ -19,7 +29,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Platform
   - 
   - 
   - 
