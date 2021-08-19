@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7849930158570574040}
   - component: {fileID: 7849930158570574041}
   - component: {fileID: 7849930158570574042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MoveablePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   platformSpeed: 4
+  CS: {fileID: 0}
+  CurrentColour: 
 --- !u!61 &7849930158570574042
 BoxCollider2D:
   m_ObjectHideFlags: 0

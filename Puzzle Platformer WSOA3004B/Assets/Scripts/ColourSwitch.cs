@@ -26,19 +26,19 @@ public class ColourSwitch : MonoBehaviour
         }
         else if(ColourCounter == 1)
         {
-            Player.GetComponent<SpriteRenderer>().color = new Color(255,0,0);
+            Player.GetComponent<SpriteRenderer>().color = new Color32(255,0,0,255);
             ColourString = Colour[ColourCounter];
             gameObject.tag = ColourString;
         }
         else if(ColourCounter == 2)
         {
-            Player.GetComponent<SpriteRenderer>().color = new Color(0,255,0);
+            Player.GetComponent<SpriteRenderer>().color = new Color32(96,200,111,255);
             ColourString = Colour[ColourCounter];
             gameObject.tag = ColourString;
         }
         else if(ColourCounter == 3)
         {
-            Player.GetComponent<SpriteRenderer>().color = new Color(0,0,255);
+            Player.GetComponent<SpriteRenderer>().color = new Color32(49,147,184,255);
             ColourString = Colour[ColourCounter];
             gameObject.tag = ColourString;
         }

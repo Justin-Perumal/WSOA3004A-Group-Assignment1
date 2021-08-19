@@ -10,6 +10,10 @@ public class BasicMovement : MonoBehaviour
     private bool IsGrounded; //For later when character controller is completely fleshed out
     public Rigidbody2D PlayerBody;
 
+    public Transform GroundCheck;
+    public float CheckSize;
+    public LayerMask Ground;
+
     void Start()
     {
         PlayerBody = GetComponent<Rigidbody2D>();
@@ -20,10 +24,12 @@ public class BasicMovement : MonoBehaviour
         MoveInput = Input.GetAxis("Horizontal");
         PlayerBody.velocity = new Vector2(MoveInput*MoveSpeed, PlayerBody.velocity.y);
 
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded)
         {
             Jump();
         }
+
+        IsGrounded = Physics2D.OverlapCircle(GroundCheck.position, CheckSize, Ground);
     }
 
     //Basic Jump function 

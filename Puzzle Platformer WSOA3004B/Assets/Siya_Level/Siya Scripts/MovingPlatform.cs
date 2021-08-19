@@ -44,24 +44,29 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         //Check the platforms colour and make sure it matches the players colour
-        if(gameObject.GetComponent<SpriteRenderer>().color == White && CurrentColour == "White")
+        if(gameObject.tag == "WhiteMove" && CurrentColour == "White")
         {
-            Debug.Log("white platform be moving");
+            transform.position = Vector2.MoveTowards(transform.position, Waypoints[currentIndex].transform.position, platformSpeed * Time.deltaTime);
+            collision.gameObject.transform.parent = gameObject.transform;
+            //Debug.Log("white platform be moving");
         }
 
-        if(gameObject.GetComponent<SpriteRenderer>().color == Red && CurrentColour == "Red")
+        if(gameObject.tag == "RedMove" && CurrentColour == "Red")
         {
-            Debug.Log("red platform be moving");
+            transform.position = Vector2.MoveTowards(transform.position, Waypoints[currentIndex].transform.position, platformSpeed * Time.deltaTime);
+            //Debug.Log("red platform be moving");
         }
 
-        if(gameObject.GetComponent<SpriteRenderer>().color == Green && CurrentColour == "Green")
+        if(gameObject.tag == "GreenMove" && CurrentColour == "Green")
         {
-            Debug.Log("green platform be moving");
+            transform.position = Vector2.MoveTowards(transform.position, Waypoints[currentIndex].transform.position, platformSpeed * Time.deltaTime);
+            //Debug.Log("green platform be moving");
         }
 
-        if(gameObject.GetComponent<SpriteRenderer>().color == Blue && CurrentColour == "Blue")
+        if(gameObject.tag == "BlueMove" && CurrentColour == "Blue")
         {
-            Debug.Log("blue platform be moving");
+            transform.position = Vector2.MoveTowards(transform.position, Waypoints[currentIndex].transform.position, platformSpeed * Time.deltaTime);
+            //Debug.Log("blue platform be moving");
         }
         //Move platform towards target waypoint
         if (collision.gameObject.name == "Player" && Vector2.Distance(Waypoints[currentIndex].transform.position, transform.position) < 0.1f)
@@ -72,6 +77,11 @@ public class MovingPlatform : MonoBehaviour
                 currentIndex = 0;
             }
         }
-        transform.position = Vector2.MoveTowards(transform.position, Waypoints[currentIndex].transform.position, platformSpeed * Time.deltaTime);
+//        transform.position = Vector2.MoveTowards(transform.position, Waypoints[currentIndex].transform.position, platformSpeed * Time.deltaTime);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collision.gameObject.transform.parent = null;
     }
 }
