@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4324880957200533078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -20, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -145,4 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Detect_Object: {fileID: 3978033553761864004, guid: d124ece8a140f3641b03d523b1c8992a,
     type: 3}
+  Door: {fileID: 0}
   Gamemanager: {fileID: 0}
