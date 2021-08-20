@@ -12,6 +12,8 @@ public class ChangePlatform : MonoBehaviour
     void Start()
     {
         CS = GameObject.Find("Player").GetComponent<ColourSwitch>();
+        PlatformCollider.enabled = false;
+        PlatformCollider.enabled = true;
     }
 
     // Update is called once per frame
