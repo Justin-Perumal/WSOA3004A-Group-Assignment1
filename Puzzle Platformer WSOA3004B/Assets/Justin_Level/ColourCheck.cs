@@ -10,7 +10,7 @@ public class ColourCheck : MonoBehaviour
 
     public bool[] CorrectPlatform;
     public bool AllCorrect;
-    public ChangePlatform CP;
+    public GameObject MovePoint;
     //public string[] PlatformColours;   --> For final iterations allowing for the platform sequence to be scalable and reusable
 
     private bool CorrectSequence;
@@ -47,8 +47,7 @@ public class ColourCheck : MonoBehaviour
 
         if(CorrectSequence)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            transform.position = Vector2.MoveTowards(transform.position, MovePoint.transform.position, 1.5f*Time.deltaTime);
             //Collectible.GetComponent<BoxCollider2D>().enabled = true;
             //Collectible.GetComponent<SpriteRenderer>().enabled = true;
         }
