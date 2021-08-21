@@ -47,6 +47,11 @@ public class ChangePlatform : MonoBehaviour
             Debug.Log("Green col disabled");
             PlatformCollider.enabled = false;
         }
+
+        if(Collided_Gameobject.CompareTag("Green_Object") && CurrentColour != "Green")
+        {
+            PlatformCollider.enabled = false;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D Col)

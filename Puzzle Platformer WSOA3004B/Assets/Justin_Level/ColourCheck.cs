@@ -6,9 +6,11 @@ public class ColourCheck : MonoBehaviour
 {
     //public GameObject[] PlatformSequence;
     public GameObject[] Platforms;
+    public string[] PlatformCorrectColours;
 
     public bool[] CorrectPlatform;
-
+    public bool AllCorrect;
+    public ChangePlatform CP;
     //public string[] PlatformColours;   --> For final iterations allowing for the platform sequence to be scalable and reusable
 
     private bool CorrectSequence;
@@ -26,79 +28,61 @@ public class ColourCheck : MonoBehaviour
         CorrectSequence = false;
         Collectible = gameObject;
 
-        Collectible.GetComponent<BoxCollider2D>().enabled = false;
-        Collectible.GetComponent<SpriteRenderer>().enabled = false;
+        //Collectible.GetComponent<BoxCollider2D>().enabled = false;
+        //Collectible.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        AllCorrect = CheckPlatforms();
+
+        if(AllCorrect)
+        {
+            CorrectSequence = true;
+        }
+        else CorrectSequence = false;
+
         CheckSequence();
 
         if(CorrectSequence)
         {
-            Collectible.GetComponent<BoxCollider2D>().enabled = true;
-            Collectible.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            //Collectible.GetComponent<BoxCollider2D>().enabled = true;
+            //Collectible.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
-    public void CheckSequence()
+    private void CheckSequence()
     {
         if(!CorrectSequence)
         {
-            if(Platforms[0].GetComponent<SpriteRenderer>().color == Green)
+            for(int i = 0; i < Platforms.Length; i++)
             {
-                CorrectPlatform[0] = true;
+                if(Platforms[i].GetComponent<ChangePlatform>().CurrentColour == PlatformCorrectColours[i])
+                {
+                    CorrectPlatform[i] = true;
+                }
+                else if(Platforms[i].GetComponent<ChangePlatform>().CurrentColour != PlatformCorrectColours[i])
+                {
+                    CorrectPlatform[i] = false;
+                }
             }
-            else CorrectPlatform[0] = false;
-
-            if(Platforms[1].GetComponent<SpriteRenderer>().color == Blue && CorrectPlatform[0])
-            {
-                CorrectPlatform[1] = true;
-            }
-            else CorrectPlatform[1] = false;
-
-            if(Platforms[2].GetComponent<SpriteRenderer>().color == White && CorrectPlatform[0] && CorrectPlatform[1])
-            {
-                CorrectPlatform[2] = true;
-            }
-            else CorrectPlatform[2] = false;
-
-            if(Platforms[3].GetComponent<SpriteRenderer>().color == Red && CorrectPlatform[0] && CorrectPlatform[1] && CorrectPlatform[2])
-            {
-                CorrectPlatform[3] = true;
-            }
-            else CorrectPlatform[3] = false;
-
-            if(Platforms[4].GetComponent<SpriteRenderer>().color == Green && CorrectPlatform[0] && CorrectPlatform[1] && CorrectPlatform[2] && CorrectPlatform[3])
-            {
-                CorrectPlatform[4] = true;
-            }
-            else CorrectPlatform[4] = false;
-
-            if(Platforms[5].GetComponent<SpriteRenderer>().color == Blue && CorrectPlatform[0] && CorrectPlatform[1] && CorrectPlatform[2] && CorrectPlatform[3] && CorrectPlatform[4])
-            {
-                CorrectPlatform[5] = true;
-            }
-            else CorrectPlatform[5] = false;
-
-            if(Platforms[6].GetComponent<SpriteRenderer>().color == White && CorrectPlatform[0] && CorrectPlatform[1] && CorrectPlatform[2] && CorrectPlatform[3] && CorrectPlatform[4] && CorrectPlatform[5])
-            {
-                CorrectPlatform[6] = true;
-            }
-            else CorrectPlatform[6] = false;
-
-            if(Platforms[7].GetComponent<SpriteRenderer>().color == Red && CorrectPlatform[0] && CorrectPlatform[1] && CorrectPlatform[2] && CorrectPlatform[3] && CorrectPlatform[4] && CorrectPlatform[5] && CorrectPlatform[6])
-            {
-                CorrectPlatform[7] = true;
-            }
-            else CorrectPlatform[7] = false;
         }
+    }
 
-        if(CorrectPlatform[0] && CorrectPlatform[1] && CorrectPlatform[2] && CorrectPlatform[3] && CorrectPlatform[4] && CorrectPlatform[5] && CorrectPlatform[6] && CorrectPlatform[7])
+    private bool CheckPlatforms()
+    {
+        for(int i = 0; i < CorrectPlatform.Length; i++)
         {
-            CorrectSequence = true;
+            if(CorrectPlatform[i] == false)
+            {
+                return false;
+            }
         }
+
+        return true;
     }
 
 // Sequencing is not working as intended at the moment ---> will be fixed by final iteration

@@ -32,7 +32,11 @@ public class Button_Spawn : MonoBehaviour
 
     void SpawnColor()
     {
-        Instantiate(Spawn_Object, new Vector2 (Tube.transform.position.x, Tube.transform.position.y-.5f), Quaternion.identity);
+       //Instantiate(Spawn_Object, new Vector2 (Tube.transform.position.x, Tube.transform.position.y-.5f), Quaternion.identity);
+       if(Spawn_Object.GetComponent<BoxCollider2D>().enabled == true)
+       {
+            Spawn_Object.transform.position = Tube.transform.position;
+       }
     }
 
     
