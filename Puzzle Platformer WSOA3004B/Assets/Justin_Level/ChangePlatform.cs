@@ -48,7 +48,17 @@ public class ChangePlatform : MonoBehaviour
             PlatformCollider.enabled = false;
         }
 
-        if(Collided_Gameobject.CompareTag("Green_Object") && CurrentColour == "Green")
+        if(Collided_Gameobject.CompareTag("Green_Object") && CurrentColour != "Green")
+        {
+            PlatformCollider.enabled = false;
+        }
+
+        if(Collided_Gameobject.CompareTag("Red_Object") && CurrentColour != "Red")
+        {
+            PlatformCollider.enabled = false;
+        }
+
+                if(Collided_Gameobject.CompareTag("Blue_Object") && CurrentColour != "Blue")
         {
             PlatformCollider.enabled = false;
         }

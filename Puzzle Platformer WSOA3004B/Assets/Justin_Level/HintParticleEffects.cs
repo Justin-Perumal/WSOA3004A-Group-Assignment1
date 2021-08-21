@@ -6,6 +6,7 @@ using TMPro;
 public class HintParticleEffects : MonoBehaviour
 {
     public ParticleSystem[] ParticleHints;
+    private bool InRange;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class HintParticleEffects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && InRange)
         {
             PlayHint();
         }
@@ -33,5 +34,15 @@ public class HintParticleEffects : MonoBehaviour
     {
         ParticleHints[Counter].Play();
         yield return new WaitForSeconds(3f);
+    }
+
+    private void OnTriggerStay2D(Collider2D Col)
+    {
+        InRange = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D Col)
+    {
+        InRange = false;
     }
 }

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wes_Level.unity
     guid: 9e7915857766e4f4cac98dc9b480ec1e
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: b654b94110bb8e540bd7d690af00a0ac
   m_configObjects: {}

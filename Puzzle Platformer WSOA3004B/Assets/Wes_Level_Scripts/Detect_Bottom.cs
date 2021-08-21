@@ -7,7 +7,7 @@ public class Detect_Bottom : MonoBehaviour
     public GameObject Detect_Object;
 
     public GameObject Door;
-    public GameObject Hint;
+    public ParticleSystem Hint;
     public GameObject Gamemanager;
 
 
@@ -54,7 +54,7 @@ public class Detect_Bottom : MonoBehaviour
 
             if(Hint != null)
             {
-                //Particles :D
+                Hint.Play();
             }
 
             if(Gamemanager != null)
