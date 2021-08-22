@@ -40,6 +40,16 @@ public class ManageScenes : MonoBehaviour
         SceneManager.LoadScene("Wes_Level");
     }
 
+    public void LoadMainLevel()
+    {
+        SceneManager.LoadScene("MainLevel");
+    }
+
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void OnTriggerEnter2D(Collider2D Collider)
     {
         SceneManager.LoadScene("MainMenu");
