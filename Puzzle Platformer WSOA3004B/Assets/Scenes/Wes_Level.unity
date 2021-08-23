@@ -156,7 +156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 598867375}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &72817098
 MonoBehaviour:
@@ -535,7 +535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1956630084}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &342789822
 MonoBehaviour:
@@ -552,6 +552,7 @@ MonoBehaviour:
   Detect_Object: {fileID: 3978033553761864004, guid: d124ece8a140f3641b03d523b1c8992a,
     type: 3}
   Door: {fileID: 0}
+  Hint: {fileID: 0}
   Gamemanager: {fileID: 1246871345}
 --- !u!50 &342789823
 Rigidbody2D:
@@ -941,7 +942,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 598867375}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519581198
 MonoBehaviour:
@@ -958,6 +959,7 @@ MonoBehaviour:
   Detect_Object: {fileID: 1190355642087935136, guid: cd9f7af3b3535134693ca98045bffac5,
     type: 3}
   Door: {fileID: 0}
+  Hint: {fileID: 0}
   Gamemanager: {fileID: 1246871345}
 --- !u!50 &519581199
 Rigidbody2D:
@@ -1280,7 +1282,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1385,9 +1387,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 519581197}
   - {fileID: 72817097}
   - {fileID: 1093908481}
-  - {fileID: 519581197}
   - {fileID: 2416879791485251438}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1599,8 +1601,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2026038678}
-  - {fileID: 1219129995}
   - {fileID: 1833403223}
+  - {fileID: 1219129995}
   - {fileID: 2913784501355728023}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1716,7 +1718,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1956630084}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &773765168
 MonoBehaviour:
@@ -1733,6 +1735,7 @@ MonoBehaviour:
   Detect_Object: {fileID: 3978033553761864004, guid: d124ece8a140f3641b03d523b1c8992a,
     type: 3}
   Door: {fileID: 0}
+  Hint: {fileID: 0}
   Gamemanager: {fileID: 1246871345}
 --- !u!50 &773765169
 Rigidbody2D:
@@ -3493,7 +3496,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 712714389}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1833403224
 MonoBehaviour:
@@ -3510,6 +3513,7 @@ MonoBehaviour:
   Detect_Object: {fileID: 6662356155335357993, guid: d5ca7299d3c9afb409d9c0bdfc69efac,
     type: 3}
   Door: {fileID: 0}
+  Hint: {fileID: 0}
   Gamemanager: {fileID: 1246871345}
 --- !u!50 &1833403225
 Rigidbody2D:
@@ -3715,9 +3719,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1754198516}
   - {fileID: 773765167}
   - {fileID: 342789821}
+  - {fileID: 1754198516}
   - {fileID: 2236382805643265781}
   m_Father: {fileID: 0}
   m_RootOrder: 6
